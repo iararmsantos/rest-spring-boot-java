@@ -14,6 +14,8 @@ public class PersonController {
 
     @Autowired
     private PersonServices service;
+    //private PersonServices service = new PersonServices();
+
 
     @RequestMapping(method= RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -47,5 +49,4 @@ public class PersonController {
     public void delete(@PathVariable("id") String id) {
         service.delete(id);
     }
-
 }

@@ -1,7 +1,6 @@
 package com.iarasantos.exceptions.handler;
 
 import com.iarasantos.exceptions.ExceptionResponse;
-import com.iarasantos.exceptions.UnsupportedMathOperationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -28,16 +27,16 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(UnsupportedMathOperationException.class)
-    public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(
-            Exception ex, WebRequest request) {
-
-        ExceptionResponse exceptionResponse = new ExceptionResponse(
-                new Date(),
-                ex.getMessage(),
-                request.getDescription(false));
-
-        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
-    }
+//    @ExceptionHandler(UnsupportedMathOperationException.class)
+//    public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(
+//            Exception ex, WebRequest request) {
+//
+//        ExceptionResponse exceptionResponse = new ExceptionResponse(
+//                new Date(),
+//                ex.getMessage(),
+//                request.getDescription(false));
+//
+//        return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+//    }
 
 }
