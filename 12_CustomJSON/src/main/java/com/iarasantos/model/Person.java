@@ -1,26 +1,27 @@
-package com.iarasantos.data.vo.v1;
+package com.iarasantos.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
-@JsonPropertyOrder({"id", "firstname", "lastname", "email"})
-public class PersonVO implements Serializable {
+@Entity
+@Table(name = "person")
+public class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JsonProperty("firstname")
+    @Column(name = "firstname", nullable = false, length = 80)
     private String firstName;
-    @JsonProperty("lastname")
+    @Column(name = "lastname", nullable = false, length = 80)
     private String lastName;
-
-    //to omit email in the JSON
-    //@JSonIgnore
+    @Column(nullable = false, length = 100)
     private String email;
 
-    public PersonVO() {
+
+    public Person() {
     }
 
     public Long getId() {
@@ -75,7 +76,7 @@ public class PersonVO implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        PersonVO other = (PersonVO) obj;
+        Person other = (Person) obj;
         if (email == null) {
             if (other.email != null)
                 return false;

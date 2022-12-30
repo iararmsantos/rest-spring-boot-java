@@ -1,23 +1,15 @@
 package com.iarasantos.data.vo.v1;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
 import java.io.Serializable;
 
-@JsonPropertyOrder({"id", "firstname", "lastname", "email"})
+
 public class PersonVO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    @JsonProperty("firstname")
     private String firstName;
-    @JsonProperty("lastname")
     private String lastName;
-
-    //to omit email in the JSON
-    //@JSonIgnore
     private String email;
 
     public PersonVO() {
