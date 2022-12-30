@@ -11,24 +11,24 @@ public class DozerMapper {
 
     /**
      * Method to convert an Object into an entity and return the new entity
-     * @param <Origin> object to be converted
-     * @param <Destiny> object type to convert
+     * @param <O> object's origin type to be converted
+     * @param <D> object's destiny type to convert
      * */
-    public static <Origin, Destiny> Destiny parseObject(Origin origin, Class<Destiny> destiny){
+    public static <O, D> D parseObject(O origin, Class<D> destiny){
         return mapper.map(origin, destiny);
 
     }
 
     /**
      * Method to convert a list of Object into a list of entity and return the new list of entity
-     * @param <Origin> object's list to be converted
-     * @param <Destiny> object type to convert
+     * @param <O> object's origin list to be converted
+     * @param <D> object's destiny to convert
      * */
-    public static <Origin, Destiny> List<Destiny> parseListObjects(List<Origin> origin, Class<Destiny> destiny){
-        List<Destiny> destinyObjects = new ArrayList<Destiny>();
-        for(Origin o : origin){
-            destinyObjects.add(mapper.map(origin, destiny));
+    public static <O, D> List<D> parseListObjects(List<O> origin, Class<D> destination) {
+        List<D> destinationObjects = new ArrayList<D>();
+        for (Object o : origin) {
+            destinationObjects.add(mapper.map(o, destination));
         }
-        return destinyObjects;
+        return destinationObjects;
     }
 }
