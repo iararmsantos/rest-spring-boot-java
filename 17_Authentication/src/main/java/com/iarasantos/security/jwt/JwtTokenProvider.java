@@ -1,4 +1,4 @@
-package com.iarasantos.securityJwt;
+package com.iarasantos.security.jwt;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
