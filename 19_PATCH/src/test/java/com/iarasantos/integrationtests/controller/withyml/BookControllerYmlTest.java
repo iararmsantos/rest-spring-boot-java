@@ -113,13 +113,13 @@ public class BookControllerYmlTest extends AbstractIntegrationTest {
 
         assertNotNull(book);
 
-        assertNotNull(book.getKey());
+        assertNotNull(book.getId());
         assertNotNull(book.getAuthor());
         assertNotNull(book.getLaunchDate());
         assertNotNull(book.getPrice());
         assertNotNull(book.getTitle());
 
-        assertTrue(book.getKey() > 0);
+        assertTrue(book.getId() > 0);
 
         assertEquals("Jane Austen", book.getAuthor());
         assertEquals(new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime(), book.getLaunchDate());
@@ -153,13 +153,13 @@ public class BookControllerYmlTest extends AbstractIntegrationTest {
 
         assertNotNull(persistedBook);
 
-        assertNotNull(persistedBook.getKey());
+        assertNotNull(persistedBook.getId());
         assertNotNull(persistedBook.getAuthor());
         assertNotNull(persistedBook.getLaunchDate());
         assertNotNull(persistedBook.getPrice());
         assertNotNull(persistedBook.getTitle());
 
-        assertEquals(book.getKey(), persistedBook.getKey());
+        assertEquals(book.getId(), persistedBook.getId());
 
         assertEquals("Jane Austen Maria", persistedBook.getAuthor());
         assertEquals(new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime(), persistedBook.getLaunchDate());
@@ -179,7 +179,7 @@ public class BookControllerYmlTest extends AbstractIntegrationTest {
                                 .encodeContentTypeAs(TestConfigs.CONTENT_TYPE_YML, ContentType.TEXT)))
                 .contentType(TestConfigs.CONTENT_TYPE_YML)
                 .accept(TestConfigs.CONTENT_TYPE_YML)
-                .pathParam("id", book.getKey())
+                .pathParam("id", book.getId())
                 .when()
                 .get("{id}")
                 .then()
@@ -192,13 +192,13 @@ public class BookControllerYmlTest extends AbstractIntegrationTest {
 
         assertNotNull(persistedBook);
 
-        assertNotNull(persistedBook.getKey());
+        assertNotNull(persistedBook.getId());
         assertNotNull(persistedBook.getAuthor());
         assertNotNull(persistedBook.getLaunchDate());
         assertNotNull(persistedBook.getPrice());
         assertNotNull(persistedBook.getTitle());
 
-        assertEquals(book.getKey(), persistedBook.getKey());
+        assertEquals(book.getId(), persistedBook.getId());
 
         assertEquals("Jane Austen Maria", persistedBook.getAuthor());
         assertEquals(new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime(), persistedBook.getLaunchDate());
@@ -217,7 +217,7 @@ public class BookControllerYmlTest extends AbstractIntegrationTest {
                                 .encodeContentTypeAs(TestConfigs.CONTENT_TYPE_YML, ContentType.TEXT)))
                 .contentType(TestConfigs.CONTENT_TYPE_YML)
                 .accept(TestConfigs.CONTENT_TYPE_YML)
-                .pathParam("id", book.getKey())
+                .pathParam("id", book.getId())
                 .when()
                 .delete("{id}")
                 .then()
@@ -247,22 +247,22 @@ public class BookControllerYmlTest extends AbstractIntegrationTest {
 
         BookVO foundBookOne = books.get(0);
 
-        assertNotNull(foundBookOne.getKey());
+        assertNotNull(foundBookOne.getId());
         assertNotNull(foundBookOne.getTitle());
         assertNotNull(foundBookOne.getAuthor());
         assertNotNull(foundBookOne.getPrice());
-        assertTrue(foundBookOne.getKey() > 0);
+        assertTrue(foundBookOne.getId() > 0);
         assertEquals("Working effectively with legacy code", foundBookOne.getTitle());
         assertEquals("Michael C. Feathers", foundBookOne.getAuthor());
         assertEquals(49.00, foundBookOne.getPrice());
 
         BookVO foundBookFive = books.get(4);
 
-        assertNotNull(foundBookFive.getKey());
+        assertNotNull(foundBookFive.getId());
         assertNotNull(foundBookFive.getTitle());
         assertNotNull(foundBookFive.getAuthor());
         assertNotNull(foundBookFive.getPrice());
-        assertTrue(foundBookFive.getKey() > 0);
+        assertTrue(foundBookFive.getId() > 0);
         assertEquals("Code complete", foundBookFive.getTitle());
         assertEquals("Steve McConnell", foundBookFive.getAuthor());
         assertEquals(58.0, foundBookFive.getPrice());
