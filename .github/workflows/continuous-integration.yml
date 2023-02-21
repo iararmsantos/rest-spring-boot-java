@@ -1,9 +1,6 @@
 name: Continuous Integration with Github Actions
 
-on:
-  push:
-    branches: 
-      -main  
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
