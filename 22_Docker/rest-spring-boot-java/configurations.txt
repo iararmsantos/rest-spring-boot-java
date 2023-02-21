@@ -1,0 +1,6 @@
+To create jar file run:
+mvn clean package
+
+or
+
+mvn clean package -DskipTests
