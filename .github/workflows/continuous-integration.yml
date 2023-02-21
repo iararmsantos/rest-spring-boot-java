@@ -35,5 +35,5 @@ jobs:
     - name: Push to dockerhub Container Registry
       run: |
         docker tag ${{ secrets.DOCKER_USERNAME }}/rest-spring-boot-java:latest ${{ secrets.DOCKER_USERNAME }}/rest-spring-boot-java:${{ github.run_id }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/rest-spring-boot-java:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/rest-spring-boot-java:${{ github.run_id }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/rest-spring-boot-java:latest
