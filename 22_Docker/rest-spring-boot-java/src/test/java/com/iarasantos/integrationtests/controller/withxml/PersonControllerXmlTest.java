@@ -257,7 +257,7 @@ public class PersonControllerXmlTest extends AbstractIntegrationTest {
         assertNotNull(foundPersonOne.getEmail());
         assertTrue(foundPersonOne.getEnabled());
 
-        assertEquals(6, foundPersonOne.getId());
+        assertEquals(9, foundPersonOne.getId());
 
         assertEquals("alexia", foundPersonOne.getFirstName());
         assertEquals("santos", foundPersonOne.getLastName());
