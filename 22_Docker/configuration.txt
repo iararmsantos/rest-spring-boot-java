@@ -1,0 +1,14 @@
+1- generate jar:
+- without tests
+    mvn clean package -DskipTests
+
+3 - reset docker environment (optional)
+
+3- execute docker compose in the docker compose directory
+    docker compose up -d --build
+
+to see containers running:
+docker compose ls
+docker ps
+
+
