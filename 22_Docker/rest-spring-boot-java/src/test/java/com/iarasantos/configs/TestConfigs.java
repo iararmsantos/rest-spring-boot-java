@@ -1,7 +1,6 @@
 package com.iarasantos.configs;
 
 public class TestConfigs {
-    //change to 80
     public static final int SERVER_PORT = 8888;
 
     public static final String HEADER_PARAM_ORIGIN = "Origin";
