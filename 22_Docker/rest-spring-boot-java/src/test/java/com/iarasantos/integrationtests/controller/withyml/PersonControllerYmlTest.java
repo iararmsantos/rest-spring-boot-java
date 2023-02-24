@@ -277,7 +277,7 @@ public class PersonControllerYmlTest extends AbstractIntegrationTest {
         assertNotNull(foundPersonOne.getEmail());
         assertTrue(foundPersonOne.getEnabled());
 
-        assertEquals(9, foundPersonOne.getId());
+        assertEquals(6, foundPersonOne.getId());
 
         assertEquals("alexia", foundPersonOne.getFirstName());
         assertEquals("santos", foundPersonOne.getLastName());

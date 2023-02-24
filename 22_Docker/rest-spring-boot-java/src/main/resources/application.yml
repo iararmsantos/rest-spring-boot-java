@@ -1,7 +1,7 @@
 server:
   port: 80
 cors:
-  originPatterns: http://localhost:8080,https://erudio.com.br,http://localhost:3000
+  originPatterns: http://0.0.0.0:8080,https://erudio.com.br,http://localhost:3000
 file:
   upload-dir: /JavaSpringBoot/rest-spring-boot-java/uploadDir
 security:
@@ -12,7 +12,7 @@ security:
 spring:
   datasource:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/springbootjava?useTimezone=true&serverTimezone=UTC
+      url: jdbc:mysql://0.0.0.0:3306/rest-spring-boot-java?useTimezone=true&serverTimezone=UTC
       username: root
       password:
   jpa:
