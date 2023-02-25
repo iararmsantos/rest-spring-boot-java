@@ -11,4 +11,20 @@ to see containers running:
 docker compose ls
 docker ps
 
+4 - show logs in runtime:
+docker logs -f [CONTAINER ID]
+
+5 - login to dockerhub
+docker login
+
+6 - To see images running:
+docker images
+
+6 - push to docker hub
+docker push [REPO NAME / IMAGE]
+
+7 - get docker tag
+
+docker tag [REPO NAME / IMAGE]:latest [REPO NAME / IMAGE]:latest
+
 
