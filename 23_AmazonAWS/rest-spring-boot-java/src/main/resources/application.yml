@@ -1,0 +1,36 @@
+server:
+  port: 80
+cors:
+  originPatterns: http://localhost:8080,https://erudio.com.br,http://localhost:3000
+file:
+  upload-dir: /JavaSpringBoot/rest-spring-boot-java/uploadDir
+security:
+  jwt:
+    token:
+      secret-key: 53cr37
+      expire-length: 3600000
+spring:
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rest-spring-boot-java.cam5nklrn0z3.us-east-2.rds.amazonaws.com:3306/rest_spring_boot_java?useTimezone=true&serverTimezone=UTC
+      username: docker
+      password: admin123
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+      show-sql: true
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+  spring-doc:
+    pathsToMatch:
+      - /auth/**
+      - /api/**/v1/**
+    swagger-ui:
+      use-root-path: true

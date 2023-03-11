@@ -1,0 +1,58 @@
+.person-container{
+    width: 100%;
+    max-width: 1180px;
+    padding: 0 30px;
+    margin: 32px auto;
+}
+
+.person-container header{   
+    display: flex;
+    align-items: flex-end;
+    padding: 0px 50px 0px 50px;
+}
+
+.person-container h1 {  
+    width: 250px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+}
+
+.item { 
+    padding: 20px;      
+}
+
+.subitem {    
+    position: relative;
+}
+
+.subitem button {    
+    position: absolute;
+    right: 24px;
+    top: 24px;    
+    border: 0;
+    background: transparent;
+}
+
+.subitem button + button {
+    top: 50px
+}
+
+.subitem button:hover {
+    opacity: 0.8;
+}
+
+.subitem strong {
+    display: block;
+    margin-bottom: 16px;
+    color: #41414D;
+}
+
+.subitem p + strong {
+    margin-top: 32px;
+}
+
+.suitem p {
+    color: #737380;
+    line-height: 21px;
+    font-size: 16px;
+}
